@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import {menuData} from '../data/MenuData';
 import {Button} from './Button';
@@ -11,13 +11,12 @@ const DropdownContainer = styled.div`
     width: 100%;
     height: 100%;
     background: #cd853f;
-    dispaly: grid;
+    display: grid;
     align-items: center;
-    top: 0;
+    top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
     left: 0;
     transition: 0.3s ease-in-out;
-    opacity: 1;
-    top: 0;
+    opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
 `;
 
 const Icon = styled.div`
@@ -58,12 +57,12 @@ const DropdownLink = styled(Link)`
     &:hover { color: #000d1a; }
 `;
 
-const BtnWrap = styled.div` dispaly: flex; justify-content: center; `;
+const BtnWrap = styled.div` display: flex; justify-content: center; `;
 
-const Dropdown = () => {
+const Dropdown = ({isOpen, toggle}) => {
     return (
-        <DropdownContainer>
-            <Icon>
+        <DropdownContainer isOpen={isOpen} onClick={toggle}>
+            <Icon onClick={toggle}>
                 <CloseIcon />
             </Icon>
             <DropdownWrapper>

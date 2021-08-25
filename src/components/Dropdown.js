@@ -17,7 +17,6 @@ const DropdownContainer = styled.div`
     left: 0;
     transition: 0.3s ease-in-out;
     opacity: 1;
-    top: 0;
 `;
 
 const Icon = styled.div`
@@ -30,7 +29,7 @@ const Icon = styled.div`
     outline: none;
 `;
 
-const CloseIcon = styled(FaTimes)`color: #000d1a`;
+const CloseIcon = styled(FaTimes)`color: #000d1a; `;
 
 const DropdownWrapper = styled.div``;
 
@@ -72,7 +71,7 @@ const Dropdown = () => {
                         <DropdownLink to={item.link} key={index}>
                             {item.title}
                         </DropdownLink>
-                    ))}
+                    ))} 
                 </DropdownMenu>
                 <BtnWrap>
                     <Button primary='true' round='true' big='true' to='/contact'>

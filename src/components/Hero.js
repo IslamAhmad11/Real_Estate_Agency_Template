@@ -118,19 +118,19 @@ const Hero = () => {
     const length = SliderData.length;
     const timeOut = useRef(null);
 
-    // useEffect(()=> {
-    //     const nextSlide = () => {
-    //         setCurrent(current === length-1 ? 0 : current + 1);
-    //     };
+    useEffect(()=> {
+        const nextSlide = () => {
+            setCurrent(current === length-1 ? 0 : current + 1);
+        };
 
-    //     timeOut.current = setTimeout(nextSlide, 2000);
+        timeOut.current = setTimeout(nextSlide, 2000);
 
-    //     return function() {
-    //         if (timeOut.current) {
-    //             clearTimeout(timeOut.current);
-    //         }
-    //     };
-    // }, [current, length] );
+        return function() {
+            if (timeOut.current) {
+                clearTimeout(timeOut.current);
+            }
+        };
+    }, [current, length] );
 
     const nextSlide = () => {
         if (timeOut.current) {

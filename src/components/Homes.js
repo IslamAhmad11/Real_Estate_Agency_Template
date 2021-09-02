@@ -10,7 +10,7 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-    padding: 4rem ;
+    padding: 3rem calc((100vw - 1300px) / 2);
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr 1fr;
@@ -23,11 +23,10 @@ const Container = styled.div`
 
 const ColumnRight = styled.div`
     margin-top: 11rem;
-
     img{ width: 100%; }
 
     p { 
-        margin: 1rem;
+        margin-top: 1rem;
         font-size: 1.5rem;
         margin-left: -2px;
      }
@@ -42,7 +41,7 @@ const ColumnLeft = styled.div`
     img{width: 100%;}
 
     p { 
-        margin: 1rem;
+        margin-top: 1rem;
         font-size: 1.5rem;
         margin-left: -2px;
      }
@@ -67,7 +66,10 @@ const Homes = ({
                     <h1>{heading}</h1>
                     <img src={image1} alt='home' />
                     <p>{paragraphOne}</p>
-                    <Button to='/Homes' >
+                    <Button
+                        style = {{marginLeft: -40,
+                        fontSize: 17}}
+                        to='/Homes' >
                         {buttonLabel}
                         < RightArrow />
                     </Button>
@@ -77,7 +79,9 @@ const Homes = ({
                     <img src={image2} alt='home' />
                     <p>{paragraphTwo}</p>
                     <Button 
-                        style={{ color: "red" }}
+                    style = {
+                        {marginLeft: -40,
+                        fontSize: 17 }}
                         to='/Homes' >
                         {buttonLabel}
                         < RightArrow />

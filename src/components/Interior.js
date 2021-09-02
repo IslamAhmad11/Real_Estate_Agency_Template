@@ -46,6 +46,7 @@ const ColumnRight = styled.div`
 const ColumnLeft = styled.div`
     width: 100%;
     height: 50%;
+    padding: 5rem;
     // dispaly: flex;
     // flex-direction: column;
     // justify-content: center;
@@ -81,7 +82,10 @@ const Interior = ({
                     <h1>{heading}</h1>
                     <p>{paragraphOne}</p>
                     <p>{paragraphTwo}</p>
-                    <Button to='/homes' primary='true'>
+                    <Button
+                        style={{background: "#c97714",
+                        color: "#000"}}
+                        to='/homes' primary='true'>
                         {buttonLabel}
                     </Button>
                 </ColumnLeft>

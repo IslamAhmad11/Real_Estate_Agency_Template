@@ -5,8 +5,6 @@ import { Button } from './Button'
 const Section = styled.section`
     width: 100%;
     height: 100%;
-    background-color: #12161f;
-    color: #fff;
     padding: 4rem 0rem;
 `;
 
@@ -21,29 +19,16 @@ const Container = styled.div`
 `;
 
 const ColumnRight = styled.div`
-    display: flex;
+    dispaly: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    img {
-        width: 100%;
-        height: 70%;
-        @media screen and (max-width: 768px) {
-            width: 90%;
-            height: 90%;
-        }
-    }
-`;
-
-const ColumnLeft = styled.div`
-    height: 50%;
-    padding: 4rem;
-    background-color: #fff;
-    color: #000;
+    align-items: flex-start;
+    line-height: 1.4;
     margin-top: 12rem;
+    order: 2;
 
     h1 {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         font-size: clamp(1.5rem, 6vw, 2rem);
     }
 
@@ -52,7 +37,29 @@ const ColumnLeft = styled.div`
     }
 `;
 
-const Interior = ({
+const ColumnLeft = styled.div`
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        order: ${({ reverse }) => (reverse ? '2' : '1')};
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            height: 90%;
+        }
+    }
+`;
+
+const Designs = ({
     heading,
     paragraphOne,
     paragraphTwo,
@@ -62,23 +69,20 @@ const Interior = ({
     return (
         <Section>
             <Container>
-                <ColumnLeft>
+                <ColumnRight>
                     <h1>{heading}</h1>
                     <p>{paragraphOne}</p>
                     <p>{paragraphTwo}</p>
-                    <Button
-                        style={{background: "#c4741f",
-                        color: "#000"}}
-                        to='/homes' primary='true'>
+                    <Button to='/homes' primary='true'>
                         {buttonLabel}
                     </Button>
-                </ColumnLeft>
-                <ColumnRight>
-                    <img src={image} alt='home' />
                 </ColumnRight>
+                <ColumnLeft>
+                    <img src={image} alt='home' />
+                </ColumnLeft>
             </Container>
         </Section>
     )
 }
 
-export default Interior
+export default Designs

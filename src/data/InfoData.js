@@ -2,6 +2,8 @@ import ImageFive from '../images/ImageFive.jpg';
 import ImageSix from '../images/ImageSix.jpg';
 import ImageSeven from '../images/ImageSeven.jpg';
 import ImageEight from '../images/ImageEight.jpg';
+import ImageNine from '../images/ImageNine.jpg';
+
 
 export const InfoData = {
     heading: 'Explore our site beautiful homes',
@@ -17,7 +19,7 @@ export const InfoData = {
 };
 
 export const InfoDataTwo = {
-    heading: 'Stunning Interior',
+    heading: 'View our newest Homes',
     paragraphOne: '8 Bed 10 Bath House in Venice, California',
     paragraphTwo: '4 Bed 2 Bath House in Miami, Florida',
     buttonLabel: 'View Details',
@@ -28,7 +30,7 @@ export const InfoDataTwo = {
 };
 
 export const InfoDataThree = {
-    heading: 'View our newest Homes',
+    heading: 'Stunning Interior',
 
     paragraphOne: 'Occaecat cillum ex velit id est ad fugiat ex anim ut esse elit aute magna. Dolore Lorem labore pariatur voluptate ut elit. Labore proident Lorem est est adipisicing.',
 
@@ -38,4 +40,21 @@ export const InfoDataThree = {
     image: ImageEight,
     reverse: true,
     delay: 300
+};
+
+export const InfoDataFour = {
+    heading: 'Modern Designs',
+
+    paragraphOne: 'Occaecat cillum ex velit id est ad fugiat ex anim ut esse elit aute magna. Dolore Lorem labore pariatur voluptate ut elit.',
+
+    paragraphTwo: 'Occaecat cillum ex velit id est ad fugiat ex anim ut esse elit aute magna. Dolore Lorem labore pariatur voluptate ut elit.',
+
+    buttonLabel: 'Learn More',
+    image: ImageNine,
+    reverse: true,
+    delay: 300
+};
+
+export const InfoDataFive = {
+    buttonLabel: "let's Chat"
 };

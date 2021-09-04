@@ -55,7 +55,6 @@ const Homes = ({
         paragraphOne,
         paragraphTwo,
         buttonLabel,
-        reverse,
         image1,
         image2
     }) => {
@@ -75,7 +74,7 @@ const Homes = ({
                     </Button>
                 </ColumnLeft>
                 
-                <ColumnRight reverse={reverse}>
+                <ColumnRight>
                     <img src={image2} alt='home' />
                     <p>{paragraphTwo}</p>
                     <Button 

@@ -55,6 +55,20 @@ export const InfoDataFour = {
     delay: 300
 };
 
-export const InfoDataFive = {
-    buttonLabel: "let's Chat"
-};
+export const InfoDataFive = [
+    {
+    heading = "Let's find your Dream Home",
+    buttonLabel = "let's Chat"
+},
+
+    links = {
+        link1: "contact us",
+        link2: "FAQ",
+        link3: "Support",
+        link4: "Questions",
+        link5: "Offices",
+        link6: "United States",
+        link7: "Europe",
+        link8: "Canada"
+    }
+]

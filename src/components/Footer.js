@@ -20,45 +20,46 @@ const Container = styled.div`
 `;
 
 const ColumnRight = styled.div`
-    dispaly: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    line-height: 1.4;
-    margin-top: 12rem;
-
-    h1 {
-        margin-bottom: 1rem;
-        font-size: clamp(1.5rem, 6vw, 2rem);
-    }
+    padding: 3rem ;
+    display: block;
+    order: 1;
 
     p {
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
 `;
 
 const ColumnLeft = styled.div`
-    padding: 4rem;
+    padding: 3rem;
     display: block;
-    justify-content: center;
-    align-items: center;
+
+    h1 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    p{
+        margin-top: 4rem;
+    }
+
 `;
 
 const Footer = ({
+    heading,
     buttonLabel,
+    links
 }) => {
     return (
         <Section>
             <Container>
                 <ColumnRight>
-                    <h1>Let's find your Dream Home</h1>
-                    <p>icons</p>
-                </ColumnRight>
-                <ColumnLeft>
                     <p>Links</p>
                     <Button to='/homes' primary='true'>
                         {buttonLabel}
                     </Button>
+                </ColumnRight>
+                <ColumnLeft>
+                    <h1>{heading}</h1>
+                    <p>icons</p>
                 </ColumnLeft>
             </Container>
         </Section>

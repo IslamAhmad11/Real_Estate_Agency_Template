@@ -56,8 +56,8 @@ const FooterContainer = ({ heading, buttonLabel }) => {
     return (
     <Footer>
         <FooterWrapper>
-            <h1>{heading}</h1>
             <FooterRow>
+                <h1>{heading}</h1>
                 <FooterColumn>
                 <FooterTitle>Contact Us</FooterTitle>
                     <FooterLink href="#">FAQ</FooterLink>

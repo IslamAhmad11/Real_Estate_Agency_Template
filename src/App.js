@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Designs from "./components/Designs";
 import Dropdown from "./components/Dropdown";
-import Footer from "./components/Footer";
+import FooterContainer from "./components/FooterContainer";
 import Hero from "./components/Hero";
 import Homes from "./components/Homes";
 import InfoSection from "./components/InfoSection";
@@ -28,7 +28,7 @@ function App() {
         <Homes {...InfoDataTwo} />
         <Interior {...InfoDataThree} />
         <Designs {...InfoDataFour} />
-        <Footer {...InfoDataFive} />
+        <FooterContainer {...InfoDataFive} />
       </>
   );
 }

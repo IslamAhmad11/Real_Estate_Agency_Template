@@ -56,6 +56,6 @@ export const InfoDataFour = {
 };
 
 export const InfoDataFive = {
-    heading: "Let's find your Dream Home",
+    heading: "Let's find \n your Dream Home",
     buttonLabel: "let's Chat"
 }

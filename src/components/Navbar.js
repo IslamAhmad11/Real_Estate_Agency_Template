@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled, {css} from 'styled-components/macro';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import {menuData} from '../data/MenuData';
 import { Button } from './Button';
 import Bars from '../images/Bars.svg';
+import NavbarStyle from '../css/NavbarStyle.css';
+import Interior from './Interior';
+import Homes from './Homes';
+import Hero from './Hero';
 
 const Nav = styled.nav`
     height: 60px;
@@ -66,8 +71,26 @@ const NavBtn = styled.div`
     `;
 
 const Navbar = ({toggle}) => {
+
+    const [navbar, setNavbar] = useState(false);
+
+    const changeBackground = () => {
+        console.log(window.scrollY)
+        if (window.scrollY >= 60) {
+          setNavbar(true)
+        } else {
+          setNavbar(false)
+        }
+      }
+
+      useEffect(() => {
+        changeBackground()
+        window.addEventListener("scroll", changeBackground)
+      })
+    
     return (
-        <Nav>
+        <Router>
+        <Nav className={navbar ? "navbar scroll" : "navbar"}>
             <Logo to='/'>ELIXR</Logo>
             <MenuBars onClick={toggle}/>
             <NavMenu>
@@ -80,7 +103,13 @@ const Navbar = ({toggle}) => {
             <NavBtn>
                 <Button to='/contact' primary="true">Contact Us</Button>
             </NavBtn>
+            <Switch>
+                <Route path='/interior' component={Interior} />
+                <Route path='/homes' component={Homes} />
+                <Route path='/hero' component={Hero} />
+            </Switch>
         </Nav>
+        </Router>
     )
 }
 

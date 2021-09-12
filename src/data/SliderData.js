@@ -2,6 +2,9 @@ import ImageOne from '../images/ImageOne.jpg';
 import ImageTwo from '../images/ImageTwo.jpg';
 import ImageThree from '../images/ImageThree.jpg';
 import ImageFour from '../images/ImageFour.jpg';
+// import ImageTen from '../images/ImageTen.jpg';
+// import ImageEleven from '../images/ImageEleven.jpg';
+// import ImageTwelve from '../images/ImageTwelve.jpg';
 
 export const SliderData = [
     {
@@ -44,7 +47,7 @@ export const SliderData = [
 //         price: '$8,980,000',
 //         path: '/homes',
 //         label: 'View Home',
-//         image: ImageFive,
+//         image: ImageTen,
 //         alt: 'House'
 //     },
 //     {
@@ -52,7 +55,7 @@ export const SliderData = [
 //         price: '$3,460,000',
 //         path: '/homes',
 //         label: 'View Home',
-//         image: ImageSix,
+//         image: ImageEleven,
 //         alt: 'House'
 //     },
 //     {
@@ -60,7 +63,7 @@ export const SliderData = [
 //         price: '$5,420,000',
 //         path: '/homes',
 //         label: 'View Home',
-//         image: ImageSeven,
+//         image: ImageTwelve,
 //         alt: 'House'
 //     },
 // ];

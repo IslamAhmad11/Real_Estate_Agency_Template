@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from './Button';
-import { IoArrowForward } from 'react-icons/io5';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Section = styled.section`
     width: 100%;
@@ -47,7 +47,7 @@ const ColumnLeft = styled.div`
      }
 `;
 
-const RightArrow = styled(IoArrowForward)` margin-left: 0.5rem; `;
+const RightArrow = styled(FaArrowRight)` margin-left: 0.5rem; `;
 
 
 const Homes = ({
@@ -59,7 +59,7 @@ const Homes = ({
         image2
     }) => {
     return (
-        <Section>
+        <Section id='Home'>
             <Container>
                 <ColumnLeft>
                     <h1>{heading}</h1>

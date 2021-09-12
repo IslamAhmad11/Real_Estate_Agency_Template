@@ -60,7 +60,7 @@ const Interior = ({
     image
 }) => {
     return (
-        <Section>
+        <Section id='Interior'>
             <Container>
                 <ColumnLeft>
                     <h1>{heading}</h1>

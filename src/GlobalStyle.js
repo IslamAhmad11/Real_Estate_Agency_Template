@@ -9,6 +9,14 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html, body { overflow-x: hidden; }
+
+    .navbar {
+        background-color: transparent;
+      }
+      
+      .scroll {
+        background-color: #c4741f;
+      }
 `;
 
 export default GlobalStyle

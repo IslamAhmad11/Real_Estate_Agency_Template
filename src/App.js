@@ -19,16 +19,16 @@ function App() {
   }
 
   return (
-      <>
-      <GlobalStyle />
-        <Navbar toggle={toggle} />
-        <Dropdown isOpen={isOpen} toggle={toggle} />
-        <Hero />
-        <InfoSection {...InfoData} />
-        <Homes {...InfoDataTwo} />
-        <Interior {...InfoDataThree} />
-        <Designs {...InfoDataFour} />
-        <FooterContainer {...InfoDataFive} />
+        <>
+          <GlobalStyle />
+          <Navbar toggle={toggle} />
+          <Dropdown isOpen={isOpen} toggle={toggle} />
+          <Hero />
+          <InfoSection {...InfoData} />
+          <Homes {...InfoDataTwo} />
+          <Interior {...InfoDataThree} />
+          <Designs {...InfoDataFour} />
+          <FooterContainer {...InfoDataFive} />
       </>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
-import { IoArrowForward, IoLogoFacebook, IoLogoYoutube, IoLogoInstagram, IoLogoLinkedin } from 'react-icons/io5';
+import { FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn, FaArrowRight } from 'react-icons/fa';
 
 const Footer = styled.div`
   padding: 80px 60px;
@@ -44,7 +45,7 @@ const FooterColumn = styled.div`
   margin-left: 60px;
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
   color: #fff;
   margin-bottom: 20px;
   font-size: 18px;
@@ -62,17 +63,27 @@ const FooterTitle = styled.p`
   font-weight: bold;
 `;
 
-const Icons = styled.div`
+const IconsWrapper = styled.div`
   display: flex;
   color: #c4741f;
   margin-top: 3rem;
-  `;
+`;
 
-const RightArrow = styled(IoArrowForward)` margin-left: 0.5rem; `;
-const FacebookIcon = styled(IoLogoFacebook)` margin-right: 1rem; font-size: 25px; `;
-const InstagramIcon = styled(IoLogoInstagram)` margin-right: 1rem; font-size: 25px; `;
-const YoutubeIcon = styled(IoLogoYoutube)` margin-right: 1rem; font-size: 25px; `;
-const LinkedinIcon = styled(IoLogoLinkedin)` margin-right: 1rem; font-size: 25px; `;
+const Icons = css`
+    margin-right: 1rem;
+    font-size: 25px;
+    cursor: pointer;
+    &:hover {
+      color: #ff9c00;
+      transition: 200ms ease-in;
+  }
+`;
+
+const RightArrow = styled(FaArrowRight)` margin-left: 0.5rem; `;
+const FacebookIcon = styled(FaFacebookF)` ${Icons} `;
+const InstagramIcon = styled(FaInstagram)` ${Icons} `;
+const YoutubeIcon = styled(FaYoutube)` ${Icons} `;
+const LinkedinIcon = styled(FaLinkedinIn)` ${Icons} `;
 
 
 const FooterContainer = ({ heading, buttonLabel }) => {
@@ -81,19 +92,19 @@ const FooterContainer = ({ heading, buttonLabel }) => {
         <FooterWrapper>
             <FooterRow1>
                 <h1>{heading}</h1>
-                <Icons>
-                    <FacebookIcon />
-                    <InstagramIcon />
+                <IconsWrapper>
                     <YoutubeIcon />
+                    <InstagramIcon />
+                    <FacebookIcon />
                     <LinkedinIcon />
-                </Icons>    
+                </IconsWrapper>    
             </FooterRow1>
             <FooterRow2>
                 <FooterColumn>
                 <FooterTitle>Contact Us</FooterTitle>
-                    <FooterLink href="#">FAQ</FooterLink>
-                    <FooterLink href="#">Support</FooterLink>
-                    <FooterLink href="#">Questions</FooterLink>
+                    <FooterLink to="#">FAQ</FooterLink>
+                    <FooterLink to="#">Support</FooterLink>
+                    <FooterLink to="#">Questions</FooterLink>
                 </FooterColumn>
                 <FooterColumn>
                 <FooterTitle>Offices</FooterTitle>

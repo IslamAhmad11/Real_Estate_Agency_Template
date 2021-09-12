@@ -155,7 +155,7 @@ const Hero = () => {
     }
     
     return (
-        <HeroSection>
+        <HeroSection id='Hero'>
             <HeroWrapper>
                 {SliderData.map((slide, index) => {
                     return(

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled, {css} from 'styled-components/macro';
 import { Link } from 'react-router-dom';
-import {menuData} from '../data/MenuData';
 import { Button } from './Button';
 import Bars from '../images/Bars.svg';
+import NavbarStyle from '../css/NavbarStyle.css';
 
 const Nav = styled.nav`
     height: 60px;
@@ -63,19 +63,36 @@ const NavBtn = styled.div`
     align-items: center;
     margin-right: 24px;
     @media screen and (max-width: 768px){ display: none }
-    `;
+`;
 
 const Navbar = ({toggle}) => {
+
+    const [navbar, setNavbar] = useState(false)
+
+    const changeBackground = () => {
+
+        if (window.scrollY >= 60) {
+          setNavbar(true)
+        } else {
+          setNavbar(false)
+        }
+      }
+
+      useEffect(() => {
+
+        changeBackground()
+
+        window.addEventListener("scroll", changeBackground)
+      })
+
     return (
-        <Nav>
-            <Logo to='/'>ELIXR</Logo>
+        <Nav className={navbar ? "navbar scroll" : "navbar"}>
+            <Logo to=''>ELIXR</Logo>
             <MenuBars onClick={toggle}/>
             <NavMenu>
-                {menuData.map((item, index) => (
-                    <NavMenuLinks to={item.link} key={index}>
-                        {item.title}
-                    </NavMenuLinks>
-                ))}
+                    <NavMenuLinks to='#Interior' >About</NavMenuLinks>
+                    <NavMenuLinks to='#Homes' >Homes</NavMenuLinks>
+                    <NavMenuLinks to='#Hero' >Rentals</NavMenuLinks>
             </NavMenu>
             <NavBtn>
                 <Button to='/contact' primary="true">Contact Us</Button>

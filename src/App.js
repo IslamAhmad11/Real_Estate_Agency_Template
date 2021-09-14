@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Designs from "./components/Designs";
 import Dropdown from "./components/Dropdown";
 import FooterContainer from "./components/FooterContainer";
@@ -9,6 +10,9 @@ import Interior from "./components/Interior";
 import Navbar from "./components/Navbar";
 import { InfoData, InfoDataFive, InfoDataFour, InfoDataThree, InfoDataTwo } from "./data/InfoData";
 import GlobalStyle from "./GlobalStyle";
+import About from'./pages/About'
+import HomesPage from'./pages/HomesPage'
+import Rentals from'./pages/Rentals'
 
 function App() {
 
@@ -19,9 +23,14 @@ function App() {
   }
 
   return (
-        <>
+        <Router>
           <GlobalStyle />
           <Navbar toggle={toggle} />
+          <Switch>
+            <Route path="/about"> <About {...InfoDataThree} {...InfoDataFive}/> </Route>
+            <Route path="/homespage"> <HomesPage {...InfoDataTwo} {...InfoDataFive} /> </Route>
+            <Route path="/rentals"> <Rentals {...InfoDataFive} /> </Route>
+          </Switch>
           <Dropdown isOpen={isOpen} toggle={toggle} />
           <Hero />
           <InfoSection {...InfoData} />
@@ -29,7 +38,7 @@ function App() {
           <Interior {...InfoDataThree} />
           <Designs {...InfoDataFour} />
           <FooterContainer {...InfoDataFive} />
-      </>
+      </Router>
   );
 }
 

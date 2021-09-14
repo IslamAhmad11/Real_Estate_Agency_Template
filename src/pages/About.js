@@ -1,59 +1,8 @@
-import React from 'react';
+import React from 'react'
+import { Button } from '../components/Button'
 import styled, {css} from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn, FaArrowRight } from 'react-icons/fa';
-import { InfoDataThree, InfoDataFive } from "../data/InfoData";
-import { Button } from '../components/Button';
-
-const Section = styled.section`
-    width: 100%;
-    height: 100%;
-    background-color: #12161f;
-    color: #fff;
-    padding: 4rem 0rem;
-`;
-
-const Container = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 800px;
-
-    @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
-    }
-`;
-
-const ColumnRight = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-        width: 100%;
-        height: 70%;
-        @media screen and (max-width: 768px) {
-            width: 90%;
-            height: 90%;
-        }
-    }
-`;
-
-const ColumnLeft = styled.div`
-    height: 50%;
-    padding: 4rem;
-    background-color: #fff;
-    color: #000;
-    margin-top: 12rem;
-
-    h1 {
-        margin-bottom: 1.5rem;
-        font-size: clamp(1.5rem, 6vw, 2rem);
-    }
-
-    p {
-        margin-bottom: 2rem;
-    }
-`;
 
 const Footer = styled.div`
   padding: 80px 60px;
@@ -136,70 +85,113 @@ const InstagramIcon = styled(FaInstagram)` ${Icons} `;
 const YoutubeIcon = styled(FaYoutube)` ${Icons} `;
 const LinkedinIcon = styled(FaLinkedinIn)` ${Icons} `;
 
-const About = () => {
-    return (
-        <Section id='Interior'>
-            <Container>
-                {InfoDataThree.map((item, index) => {
-                    return(
-                        <>
-                            <ColumnLeft key={index}>
-                                <h1>{item.heading}</h1>
-                                <p>{item.paragraphOne}</p>
-                                <p>{item.paragraphTwo}</p>
-                                <Button
-                                    style={{background: "#c4741f",
-                                    color: "#000"}}
-                                    to='/homes' primary='true'>
-                                    {item.buttonLabel}
-                                </Button>
-                            </ColumnLeft>
-                            <ColumnRight>
-                                <img src={item.image} alt='home' />
-                            </ColumnRight>
-                        </>
-                    )
-                })}
 
+const Section = styled.section`
+    width: 100%;
+    height: 100%;
+    background-color: #12161f;
+    color: #fff;
+    padding: 4rem 0rem;
+`;
+
+const Container = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 800px;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+`;
+
+const ColumnRight = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+        height: 70%;
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            height: 90%;
+        }
+    }
+`;
+
+const ColumnLeft = styled.div`
+    height: 50%;
+    padding: 4rem;
+    background-color: #fff;
+    color: #000;
+    margin-top: 12rem;
+
+    h1 {
+        margin-bottom: 1.5rem;
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+`;
+
+const About = ({
+    heading,
+    paragraphOne,
+    paragraphTwo,
+    buttonLabel,
+    image
+}) => {
+    return (
+        <Section>
+            <Container>
+                <ColumnLeft>
+                    <h1>{heading}</h1>
+                    <p>{paragraphOne}</p>
+                    <p>{paragraphTwo}</p>
+                    <Button
+                        style={{background: "#c4741f",
+                        color: "#000"}}
+                        to='/homes' primary='true'>
+                        {buttonLabel}
+                    </Button>
+                </ColumnLeft>
+                <ColumnRight>
+                    <img src={image} alt='home' />
+                </ColumnRight>
                 <Footer>
                     <FooterWrapper>
-                        {InfoDataFive.map((item,index) => {
-                            return(
-                                <>
-                                    <FooterRow1 key={index}>
-                                        <h1>{item.heading}</h1>
-                                        <IconsWrapper>
-                                            <YoutubeIcon />
-                                            <InstagramIcon />
-                                            <FacebookIcon />
-                                            <LinkedinIcon />
-                                        </IconsWrapper>    
-                                    </FooterRow1>
-                                    <FooterRow2>
-                                        <FooterColumn>
-                                            <FooterTitle>Contact Us</FooterTitle>
-                                            <FooterLink to="#">FAQ</FooterLink>
-                                            <FooterLink to="#">Support</FooterLink>
-                                            <FooterLink to="#">Questions</FooterLink>
-                                        </FooterColumn>
-                                        <FooterColumn>
-                                            <FooterTitle>Offices</FooterTitle>
-                                            <FooterLink href="#">United States</FooterLink>
-                                            <FooterLink href="#">Europe</FooterLink>
-                                            <FooterLink href="#">Canada</FooterLink>
-                                            <Button
-                                                style={{background: "#c4741f",
-                                                color: "#000"}}
-                                                to='/homes' primary='true'>
-                                                {item.buttonLabel}
-                                                < RightArrow />
-                                            </Button>
-                                        </FooterColumn>
-                                    </FooterRow2>
-                                </>
-                            )
-                        })}
-                        
+                        <FooterRow1>
+                            <h1>{heading}</h1>
+                            <IconsWrapper>
+                                <YoutubeIcon />
+                                <InstagramIcon />
+                                <FacebookIcon />
+                                <LinkedinIcon />
+                            </IconsWrapper>    
+                        </FooterRow1>
+                        <FooterRow2>
+                            <FooterColumn>
+                            <FooterTitle>Contact Us</FooterTitle>
+                                <FooterLink to="#">FAQ</FooterLink>
+                                <FooterLink to="#">Support</FooterLink>
+                                <FooterLink to="#">Questions</FooterLink>
+                            </FooterColumn>
+                            <FooterColumn>
+                            <FooterTitle>Offices</FooterTitle>
+                                <FooterLink href="#">United States</FooterLink>
+                                <FooterLink href="#">Europe</FooterLink>
+                                <FooterLink href="#">Canada</FooterLink>
+                                <Button
+                                        style={{background: "#c4741f",
+                                        color: "#000"}}
+                                        to='/homes' primary='true'>
+                                        {buttonLabel}
+                                        < RightArrow />
+                                </Button>
+                            </FooterColumn>
+                        </FooterRow2>
                     </FooterWrapper>
                 </Footer>
             </Container>

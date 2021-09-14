@@ -59,7 +59,7 @@ const Homes = ({
         image2
     }) => {
     return (
-        <Section id='Home'>
+        <Section>
             <Container>
                 <ColumnLeft>
                     <h1>{heading}</h1>

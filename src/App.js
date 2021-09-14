@@ -14,7 +14,6 @@ import About from './pages/About';
 import HomesPage from './pages/HomesPage';
 import Rentals from './pages/Rentals';
 
-
 function App() {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -24,14 +23,14 @@ function App() {
   }
 
   return (
-      <Router>
+        <Router>
           <GlobalStyle />
           <Navbar toggle={toggle} />
           <Switch>
-            <Route exact path='/about' component={About} />
-            <Route exact path='/homespage' component={HomesPage} />
-            <Route exact path='/rentals' component={Rentals} />
-          </Switch>  
+            <Route path="/about"> <About {...InfoDataThree} {...InfoDataFive}/> </Route>
+            <Route path="/homespage"> <HomesPage {...InfoDataTwo} {...InfoDataFive} /> </Route>
+            <Route path="/rentals"> <Rentals {...InfoDataFive} /> </Route>
+          </Switch>
           <Dropdown isOpen={isOpen} toggle={toggle} />
           <Hero />
           <InfoSection {...InfoData} />

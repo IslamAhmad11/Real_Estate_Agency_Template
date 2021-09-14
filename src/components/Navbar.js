@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled, {css} from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 import {menuData} from '../data/MenuData';
@@ -64,11 +64,11 @@ const NavBtn = styled.div`
     align-items: center;
     margin-right: 24px;
     @media screen and (max-width: 768px){ display: none }
-`;
+    `;
 
 const Navbar = ({toggle}) => {
 
-    const [navbar, setNavbar] = useState(false)
+    const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
         console.log(window.scrollY)

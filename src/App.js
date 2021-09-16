@@ -23,6 +23,7 @@ function App() {
   }
 
   return (
+    <>
         <Router>
           <GlobalStyle />
           <Navbar toggle={toggle} />
@@ -38,7 +39,8 @@ function App() {
           <Interior {...InfoDataThree} />
           <Designs {...InfoDataFour} />
           <FooterContainer {...InfoDataFive} />
-      </Router>
+        </Router>
+    </>
   );
 }
 

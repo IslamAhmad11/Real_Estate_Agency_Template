@@ -23,22 +23,25 @@ function App() {
   }
 
   return (
+      <>
         <Router>
-          <GlobalStyle />
-          <Navbar toggle={toggle} />
-          <Switch>
-            <Route path="/about"> <About {...InfoDataThree} {...InfoDataFive}/> </Route>
-            <Route path="/homespage"> <HomesPage {...InfoDataTwo} {...InfoDataFive} /> </Route>
-            <Route path="/rentals"> <Rentals {...InfoDataFive} /> </Route>
-          </Switch>
-          <Dropdown isOpen={isOpen} toggle={toggle} />
-          <Hero />
-          <InfoSection {...InfoData} />
-          <Homes {...InfoDataTwo} />
-          <Interior {...InfoDataThree} />
-          <Designs {...InfoDataFour} />
-          <FooterContainer {...InfoDataFive} />
-      </Router>
+            <GlobalStyle />
+            <Navbar toggle={toggle} />
+            <Switch>
+              <Route exact path="/about"> <About {...InfoDataThree} {...InfoDataFive}/> </Route>
+              <Route exact path="/homespage"> <HomesPage {...InfoDataTwo} {...InfoDataFive} /> </Route>
+              <Route exact path="/rentals"> <Rentals toggle={toggle} {...InfoDataFive} /> </Route>
+            </Switch>
+            <Dropdown isOpen={isOpen} toggle={toggle} />
+            <Hero />
+            <InfoSection {...InfoData} />
+            <Homes {...InfoDataTwo} />
+            <Interior {...InfoDataThree} />
+            <Designs {...InfoDataFour} />
+            <FooterContainer {...InfoDataFive} />
+        </Router>
+      </>  
+
   );
 }
 

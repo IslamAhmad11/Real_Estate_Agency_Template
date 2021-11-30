@@ -1,10 +1,10 @@
-import ImageOne from '../images/ImageOne.jpg';
-import ImageTwo from '../images/ImageTwo.jpg';
-import ImageThree from '../images/ImageThree.jpg';
-import ImageFour from '../images/ImageFour.jpg';
-import ImageTen from '../images/ImageTen.jpg';
-import ImageEleven from '../images/ImageEleven.jpg';
-import ImageTwelve from '../images/ImageTwelve.jpg';
+import ImageOne from '../images/ImageOne.webp';
+import ImageTwo from '../images/ImageTwo.webp';
+import ImageThree from '../images/ImageThree.webp';
+import ImageFour from '../images/ImageFour.webp';
+import ImageTen from '../images/ImageTen.webp';
+import ImageEleven from '../images/ImageEleven.webp';
+import ImageTwelve from '../images/ImageTwelve.webp';
 
 export const SliderData = [
     {

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import {menuData} from '../data/MenuData';
 import { Button } from './Button';
 import Bars from '../images/Bars.svg';
-import NavbarStyle from '../css/NavbarStyle.css';
 
 const Nav = styled.nav`
     height: 60px;
@@ -71,7 +70,6 @@ const Navbar = ({toggle}) => {
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
-        console.log(window.scrollY)
         if (window.scrollY >= 60) {
           setNavbar(true)
         } else {
